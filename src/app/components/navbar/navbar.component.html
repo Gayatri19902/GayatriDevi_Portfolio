@@ -1,0 +1,30 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-inner container">
+    <a class="nav-logo" (click)="scrollTo('#home')">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">GDP</span>
+      <span class="logo-bracket">/&gt;</span>
+    </a>
+
+    <ul class="nav-links" [class.open]="isMobileMenuOpen">
+      <li *ngFor="let link of navLinks">
+        <a
+          [class.active]="activeSection === link.href.replace('#', '')"
+          (click)="scrollTo(link.href)">
+          {{ link.label }}
+        </a>
+      </li>
+      <li>
+        <a href="mailto:gayatridevi.putta@gmail.com" class="nav-cta btn btn-primary btn-sm">
+          Hire Me
+        </a>
+      </li>
+    </ul>
+
+    <button class="hamburger" (click)="toggleMobileMenu()" [class.open]="isMobileMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>

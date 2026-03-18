@@ -1,0 +1,66 @@
+<section id="education" class="education">
+  <div class="container">
+    <div class="section-header" appScrollAnimate>
+      <span class="section-label">05. Learning</span>
+      <h2 class="section-title">Education & <span>Certifications</span></h2>
+    </div>
+
+    <div class="edu-layout">
+      <!-- Education cards -->
+      <div class="edu-column">
+        <div class="column-label mono">🎓 Academic Qualifications</div>
+        <div class="edu-cards">
+          <div class="edu-card"
+               *ngFor="let edu of education; let i = index"
+               appScrollAnimate [animDelay]="i * 120">
+            <div class="edu-card-top">
+              <div class="edu-icon">{{ edu.icon }}</div>
+              <div class="edu-cgpa">
+                <span class="cgpa-label mono">CGPA</span>
+                <span class="cgpa-value">{{ edu.cgpa }}</span>
+              </div>
+            </div>
+            <h3 class="edu-degree">{{ edu.degree }}</h3>
+            <div class="edu-institution">{{ edu.institution }}</div>
+            <div class="edu-details">
+              <span class="mono">{{ edu.period }}</span>
+              <span class="edu-location">📍 {{ edu.location }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="edu-column" appScrollAnimate [animDelay]="200">
+        <div class="column-label mono">🏆 Certifications</div>
+        <div class="cert-cards">
+          <div class="cert-card" *ngFor="let cert of certifications">
+            <div class="cert-icon" [style.background]="cert.color + '20'">
+              <span>{{ cert.icon }}</span>
+            </div>
+            <div class="cert-info">
+              <div class="cert-title">{{ cert.title }}</div>
+              <div class="cert-issuer">{{ cert.issuer }}</div>
+            </div>
+            <div class="cert-badge" [style.color]="cert.color">✓</div>
+          </div>
+        </div>
+
+        <!-- Angular exploration note -->
+        <div class="learning-card" appScrollAnimate [animDelay]="300">
+          <div class="learning-header">
+            <span>🔭</span>
+            <span class="mono" style="font-size: 12px; color: var(--color-primary);">Currently Exploring</span>
+          </div>
+          <ul class="learning-list">
+            <li>Angular Signals & Signal-based components</li>
+            <li>Standalone Components architecture</li>
+            <li>New Control Flow syntax (&#64;if, &#64;for, &#64;switch)</li>
+            <li>Angular v17+ Deferrable Views</li>
+            <li>Server-Side Rendering (Angular SSR)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

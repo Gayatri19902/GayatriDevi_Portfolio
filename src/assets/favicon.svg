@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="text-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="bracket-l" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="64" height="64" rx="14" fill="url(#bg-grad)"/>
+
+  <!-- Border ring -->
+  <rect width="64" height="64" rx="14" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.4"/>
+
+  <!-- Left bracket < -->
+  <path d="M11 20 L5 32 L11 44" fill="none" stroke="url(#bracket-l)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+
+  <!-- Right bracket > -->
+  <path d="M53 20 L59 32 L53 44" fill="none" stroke="#818CF8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+
+  <!-- G letter -->
+  <text
+    x="32"
+    y="41"
+    text-anchor="middle"
+    font-family="'Arial Black', sans-serif"
+    font-weight="900"
+    font-size="30"
+    fill="url(#text-grad)"
+  >G</text>
+
+  <!-- Dot accent -->
+  <circle cx="32" cy="51" r="2.5" fill="#3B82F6" opacity="0.9"/>
+  <circle cx="32" cy="51" r="4.5" fill="#3B82F6" opacity="0.2"/>
+</svg>

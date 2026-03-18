@@ -1,0 +1,58 @@
+<section id="experience" class="experience">
+  <div class="container">
+    <div class="section-header" appScrollAnimate>
+      <span class="section-label">03. Career</span>
+      <h2 class="section-title">Work <span>Experience</span></h2>
+      <p class="section-subtitle">2.9+ years building enterprise Angular applications.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-track"></div>
+
+      <div class="timeline-item"
+           *ngFor="let exp of experiences; let i = index"
+           [class.current]="exp.current"
+           appScrollAnimate [animDelay]="i * 150">
+
+        <!-- Timeline dot -->
+        <div class="timeline-dot">
+          <div class="timeline-dot-inner">
+            <span class="glow-dot" *ngIf="exp.current"></span>
+            <div class="dot-static" *ngIf="!exp.current"></div>
+          </div>
+        </div>
+
+        <!-- Content card -->
+        <div class="exp-card">
+          <div class="exp-card-top">
+            <div class="exp-meta">
+              <div class="exp-badge" *ngIf="exp.current">
+                <span class="glow-dot"></span>
+                Current
+              </div>
+              <div class="exp-company">{{ exp.company }}</div>
+              <div class="exp-role">{{ exp.role }}</div>
+            </div>
+            <div class="exp-info">
+              <div class="exp-period mono">{{ exp.period }}</div>
+              <div class="exp-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                {{ exp.location }}
+              </div>
+            </div>
+          </div>
+
+          <ul class="exp-highlights">
+            <li *ngFor="let h of exp.highlights">
+              <span class="highlight-bullet">▸</span>
+              {{ h }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

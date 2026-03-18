@@ -1,0 +1,96 @@
+# How to Install the Favicon into Your Angular Portfolio
+=====================================================
+
+## Files in this package
+--------------------------
+favicon.svg          → Main vector favicon (browser tab)
+favicon.ico          → Legacy browser fallback (multi-size: 16, 32, 48px)
+favicon-16x16.png    → Small PNG
+favicon-32x32.png    → Standard PNG
+favicon-48x48.png    → Large PNG
+apple-touch-icon.svg → iPhone/iPad home screen icon
+logo.svg             → Full navbar logo (GDP + "Angular Dev" text)
+index.html           → Drop-in replacement for your src/index.html
+
+
+## Step 1 — Copy favicon files into your project
+---------------------------------------------------
+Copy these files into your Angular project's `src/assets/` folder:
+
+  favicon.svg
+  favicon-16x16.png
+  favicon-32x32.png
+  apple-touch-icon.svg
+
+Copy this file directly into `src/` (NOT assets):
+
+  favicon.ico        →  src/favicon.ico  (replaces the default Angular one)
+
+
+## Step 2 — Replace src/index.html
+-------------------------------------
+Replace your entire `src/index.html` with the `index.html` from this package.
+
+Or just copy these lines into the <head> of your existing index.html,
+replacing any existing <link rel="icon"> line:
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.svg">
+  <meta name="theme-color" content="#0a0a0f">
+
+
+## Step 3 — Register assets in angular.json
+---------------------------------------------
+In your angular.json, make sure "assets" includes the assets folder.
+It should already contain this (it does in the project we built):
+
+  "assets": [
+    "src/favicon.ico",
+    "src/assets"
+  ]
+
+No change needed — the assets folder is already registered.
+
+
+## Step 4 (Optional) — Use the logo SVG in the navbar
+-------------------------------------------------------
+To use logo.svg as an <img> in the navbar instead of the text version,
+open:  src/app/components/navbar/navbar.component.html
+
+Replace this block:
+  <a class="nav-logo" (click)="scrollTo('#home')">
+    <span class="logo-bracket">&lt;</span>
+    <span class="logo-name">GDP</span>
+    <span class="logo-bracket">/&gt;</span>
+  </a>
+
+With this:
+  <a class="nav-logo" (click)="scrollTo('#home')">
+    <img src="assets/logo.svg" alt="GDP Logo" width="140" height="36">
+  </a>
+
+
+## Step 5 — Run and verify
+---------------------------
+  npm start
+
+Open http://localhost:4200 and check:
+  ✓ Browser tab shows the G favicon
+  ✓ Tab background is dark with teal G icon
+  ✓ On mobile "Add to Home Screen" shows the apple-touch-icon
+
+
+## Final folder structure
+--------------------------
+  src/
+  ├── favicon.ico              ← replaces Angular default
+  ├── index.html               ← updated with all <link> tags
+  └── assets/
+      ├── favicon.svg          ← modern browsers use this
+      ├── favicon-16x16.png
+      ├── favicon-32x32.png
+      ├── apple-touch-icon.svg
+      └── logo.svg             ← optional: use in navbar

@@ -1,0 +1,189 @@
+.experience {
+  background: var(--color-bg);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-track {
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  opacity: 0.3;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 72px;
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 640px) {
+    padding-left: 0;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 28px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+.timeline-dot-inner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.timeline-item.current .timeline-dot-inner {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 20px rgba(100, 220, 180, 0.3);
+}
+
+.dot-static {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-text-3);
+}
+
+/* === EXP CARD === */
+.exp-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: var(--color-border-glow);
+    box-shadow: var(--shadow-glow);
+    transform: translateX(4px);
+  }
+}
+
+.timeline-item.current .exp-card {
+  border-color: rgba(100, 220, 180, 0.2);
+  background: linear-gradient(135deg, var(--color-bg-card) 0%, rgba(100, 220, 180, 0.03) 100%);
+}
+
+.exp-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 20px;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+
+.exp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background: rgba(100, 220, 180, 0.1);
+  border: 1px solid rgba(100, 220, 180, 0.25);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.exp-company {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.exp-role {
+  font-size: 14px;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.exp-info {
+  text-align: right;
+
+  @media (max-width: 640px) {
+    text-align: left;
+  }
+}
+
+.exp-period {
+  font-size: 13px;
+  color: var(--color-text-2);
+  margin-bottom: 6px;
+}
+
+.exp-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--color-text-3);
+  justify-content: flex-end;
+
+  @media (max-width: 640px) {
+    justify-content: flex-start;
+  }
+
+  svg { color: var(--color-text-3); }
+}
+
+/* === HIGHLIGHTS === */
+.exp-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  li {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--color-text-2);
+  }
+}
+
+.highlight-bullet {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 12px;
+}

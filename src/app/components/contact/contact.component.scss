@@ -1,0 +1,216 @@
+.contact {
+  background: var(--color-bg-2);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+    opacity: 0.3;
+  }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* === LEFT INFO === */
+.contact-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-text-2);
+  margin-bottom: 32px;
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  text-decoration: none;
+
+  &:not(.non-link):hover {
+    border-color: var(--color-border-glow);
+    transform: translateX(4px);
+    color: var(--color-text);
+  }
+}
+
+.contact-card-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary-dim);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-primary);
+  }
+}
+
+.contact-card-label {
+  font-size: 10px;
+  color: var(--color-text-3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.contact-card-value {
+  font-size: 13px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.social-row {
+  display: flex;
+  gap: 12px;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 13px;
+  color: var(--color-text-2);
+  font-weight: 500;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-dim);
+  }
+}
+
+/* === FORM === */
+.contact-form-wrapper {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 11px;
+  color: var(--color-text-3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.form-input {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text);
+  transition: var(--transition);
+  outline: none;
+  resize: none;
+
+  &::placeholder {
+    color: var(--color-text-3);
+  }
+
+  &:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(100, 220, 180, 0.1);
+  }
+}
+
+.form-textarea {
+  line-height: 1.6;
+  min-height: 130px;
+}
+
+.submit-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 14px;
+  font-size: 14px;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+}
+
+/* === SUCCESS === */
+.success-msg {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: rgba(100, 220, 180, 0.06);
+  border: 1px solid rgba(100, 220, 180, 0.2);
+  border-radius: var(--radius-lg);
+  font-size: 32px;
+
+  .success-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 4px;
+  }
+
+  .success-sub {
+    font-size: 13px;
+    color: var(--color-text-2);
+  }
+}

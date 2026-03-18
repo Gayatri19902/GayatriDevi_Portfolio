@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npm run build:prod",
+  "outputDirectory": "dist/gayatri-portfolio/browser",
+  "framework": "angular",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
