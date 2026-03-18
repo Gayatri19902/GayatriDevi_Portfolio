@@ -12,13 +12,13 @@ import { PortfolioDataService } from '../../services/portfolio-data.service';
 export class HeroComponent implements OnInit, OnDestroy {
   personal: any;
   typedText = '';
-  private phrases = ['Angular Developer', 'Frontend Engineer', 'UI Architect', 'RxJS Enthusiast'];
+  private phrases = ['Angular Developer', 'Front End Engineer', 'UI Architect', 'RxJS Enthusiast'];
   private currentPhraseIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
   private timer: any;
 
-  constructor(private data: PortfolioDataService) {}
+  constructor(private data: PortfolioDataService) { }
 
   ngOnInit() {
     this.personal = this.data.personal;
@@ -31,7 +31,6 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   typeEffect() {
     const currentPhrase = this.phrases[this.currentPhraseIndex];
-
     if (this.isDeleting) {
       this.typedText = currentPhrase.substring(0, this.charIndex - 1);
       this.charIndex--;

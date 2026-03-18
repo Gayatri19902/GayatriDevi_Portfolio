@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
     { label: 'Contact', href: '#contact' }
   ];
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   @HostListener('window:scroll')
   onScroll() {

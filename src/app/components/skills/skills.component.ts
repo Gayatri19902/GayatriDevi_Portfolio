@@ -14,7 +14,7 @@ export class SkillsComponent implements OnInit {
   skills: Skill[] = [];
   tools = ['Postman', 'Swagger', 'GitHub', 'Bitbucket', 'Figma', 'VS Code', 'Karma', 'Jasmine', 'Lighthouse', 'Chrome DevTools', 'Angular CLI', 'npm/yarn', 'JWT Auth', 'Page Speed Insights'];
 
-  constructor(private data: PortfolioDataService) {}
+  constructor(private data: PortfolioDataService) { }
 
   ngOnInit() {
     this.skills = this.data.skills;

@@ -10,9 +10,7 @@
       <div class="edu-column">
         <div class="column-label mono">🎓 Academic Qualifications</div>
         <div class="edu-cards">
-          <div class="edu-card"
-               *ngFor="let edu of education; let i = index"
-               appScrollAnimate [animDelay]="i * 120">
+          <div class="edu-card" *ngFor="let edu of education; let i = index" appScrollAnimate [animDelay]="i * 120">
             <div class="edu-card-top">
               <div class="edu-icon">{{ edu.icon }}</div>
               <div class="edu-cgpa">

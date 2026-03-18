@@ -31,4 +31,4 @@ import { ContactComponent } from '../contact/contact.component';
     <app-contact></app-contact>
   `
 })
-export class HomeComponent {}
+export class HomeComponent { }

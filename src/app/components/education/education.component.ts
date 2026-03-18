@@ -14,7 +14,7 @@ export class EducationComponent implements OnInit {
   education: any[] = [];
   certifications: any[] = [];
 
-  constructor(private data: PortfolioDataService) {}
+  constructor(private data: PortfolioDataService) { }
 
   ngOnInit() {
     this.education = this.data.education;

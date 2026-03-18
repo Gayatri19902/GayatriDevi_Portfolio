@@ -218,6 +218,14 @@ export class PortfolioDataService {
       period: '2019 – 2022',
       cgpa: '8.95',
       icon: '🎓'
+    },
+    {
+      degree: 'Intermediate — MPC',
+      institution: 'Vignan Jyothi Junior College',
+      location: 'S Kota, Vizianagaram',
+      period: '2017 – 2019',
+      cgpa: '8.85',
+      icon: '🎓'
     }
   ];
 

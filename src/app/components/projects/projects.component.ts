@@ -13,7 +13,7 @@ import { ScrollAnimateDirective } from '../../services/scroll-animate.directive'
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
 
-  constructor(private data: PortfolioDataService) {}
+  constructor(private data: PortfolioDataService) { }
 
   ngOnInit() {
     this.projects = this.data.projects;

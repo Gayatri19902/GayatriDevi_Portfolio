@@ -7,9 +7,7 @@
     </div>
 
     <div class="skills-grid">
-      <div class="skill-card"
-           *ngFor="let category of skills; let i = index"
-           appScrollAnimate [animDelay]="i * 80">
+      <div class="skill-card" *ngFor="let category of skills; let i = index" appScrollAnimate [animDelay]="i * 80">
         <div class="skill-card-header">
           <span class="skill-icon">{{ category.icon }}</span>
           <h3 class="skill-category">{{ category.category }}</h3>

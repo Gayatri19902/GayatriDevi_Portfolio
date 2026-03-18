@@ -58,9 +58,19 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  33% { transform: translateY(-20px) scale(1.02); }
-  66% { transform: translateY(10px) scale(0.98); }
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  33% {
+    transform: translateY(-20px) scale(1.02);
+  }
+
+  66% {
+    transform: translateY(10px) scale(0.98);
+  }
 }
 
 /* === HERO INNER LAYOUT === */
@@ -131,8 +141,15 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-summary {
@@ -223,8 +240,15 @@
 }
 
 @keyframes card-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 .stats-card-header {
@@ -245,9 +269,17 @@
       border-radius: 50%;
       background: var(--color-text-3);
 
-      &:nth-child(1) { background: #ff5f57; }
-      &:nth-child(2) { background: #ffbd2e; }
-      &:nth-child(3) { background: #28c840; }
+      &:nth-child(1) {
+        background: #ff5f57;
+      }
+
+      &:nth-child(2) {
+        background: #ffbd2e;
+      }
+
+      &:nth-child(3) {
+        background: #28c840;
+      }
     }
   }
 
@@ -270,12 +302,29 @@
     padding-left: 24px;
   }
 
-  .code-keyword { color: #c792ea; }
-  .code-var { color: #82aaff; }
-  .code-prop { color: #f07178; }
-  .code-string { color: var(--color-primary); }
-  .code-number { color: #f78c6c; }
-  .code-bool { color: #ff9cac; }
+  .code-keyword {
+    color: #c792ea;
+  }
+
+  .code-var {
+    color: #82aaff;
+  }
+
+  .code-prop {
+    color: #f07178;
+  }
+
+  .code-string {
+    color: var(--color-primary);
+  }
+
+  .code-number {
+    color: #f78c6c;
+  }
+
+  .code-bool {
+    color: #ff9cac;
+  }
 }
 
 /* === FLOATING METRIC BADGES === */
@@ -288,7 +337,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
   .metric-number {
     font-family: var(--font-display);
@@ -329,8 +378,15 @@
 }
 
 @keyframes badge-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* === SCROLL INDICATOR === */
@@ -347,7 +403,9 @@
   opacity: 0.5;
   transition: var(--transition);
 
-  &:hover { opacity: 1; }
+  &:hover {
+    opacity: 1;
+  }
 
   span {
     font-family: var(--font-mono);
@@ -377,6 +435,13 @@
 }
 
 @keyframes scroll-wheel {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(12px); opacity: 0; }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
 }

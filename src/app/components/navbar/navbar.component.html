@@ -8,9 +8,7 @@
 
     <ul class="nav-links" [class.open]="isMobileMenuOpen">
       <li *ngFor="let link of navLinks">
-        <a
-          [class.active]="activeSection === link.href.replace('#', '')"
-          (click)="scrollTo(link.href)">
+        <a [class.active]="activeSection === link.href.replace('#', '')" (click)="scrollTo(link.href)">
           {{ link.label }}
         </a>
       </li>
